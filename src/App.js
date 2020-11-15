@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import WeatherTable from './WeatherTable';
 
 const styles = {
@@ -28,7 +28,7 @@ function App() {
   const [city, setCity] = useState('');
   const [country, setCountry] = useState(''); 
 
-  const getWeather = async() => {
+  const getWeatherinfo = async() => {
     const response = await fetch(`http://api.weatherstack.com/current?access_key=03ab9d9afb9932b3bc2f396a113039c8&query=${city}, ${country}`);
     const weatherInfo = await response.json();
     setCurrent(weatherInfo.current);
@@ -38,7 +38,7 @@ function App() {
     function submitHandler(e) {
     e.preventDefault();
     if (city && country) {
-      getWeather();
+      getWeatherinfo();
     }
 
   }
