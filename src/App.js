@@ -9,27 +9,10 @@ function App() {
   const [city, setCity] = useState('osh');
   const [weatherData, setWeatherData] = useState([]);
 
-<<<<<<< HEAD
   useEffect(()=>
   getWeatherInfo()
   , 
   [city]);
-=======
-  const getWeatherinfo = async() => {
-    const response = await fetch(`https://api.weatherstack.com/current?access_key=03ab9d9afb9932b3bc2f396a113039c8&query=${city}, ${country}`);
-    const weatherInfo = await response.json();
-    setCurrent(weatherInfo.current);
-    setRequest(weatherInfo.request);
-    };
-
-    function submitHandler(e) {
-    e.preventDefault();
-    if (city && country) {
-      getWeatherinfo();
-    }
-
-  }
->>>>>>> c7871087a96a03bf8f4fa83a96898c22fd34eb6c
 
   const getWeatherInfo = async() => {
     const response = await fetch(`
